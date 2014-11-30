@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<?php
+		$this->getCSS('bootstrap.min'); 
+		$this->getCSS('font-awesome.min'); 
+		$this->getCSS('smartadmin-production');
+		$this->getCSS('lockscreen');
+		$this->getCSS('okystyles');
+		$this->getFavicon();
+	?>
+
+</head>
+<body>
+	<div id="main" role="main">
+		<form class="lockscreen animated flipInY" method="POST" action="#">
+			<div class="logo">
+				<h1 class="semi-bold">
+					<!-- img src="img/logo-o.png" alt="" /--> 
+					&#161;Bienvenidos!
+				</h1>
+			</div>
+			<div>
+				<img src="assets/img/okylogobig.jpg" alt="" width="120" height="120" />
+				<div>
+					<h1>
+						<i class="fa fa-user fa-3x text-muted air air-top-right hidden-mobile"></i>
+						<i class="fa fa-lock text-muted"></i>
+						Acceso de usuarios
+					</h1>
+					<div class="input-group">
+						<input class="form-control" type="text" placeholder="C&#243;digo o correo electr&#243;nico" id="idcc" name="idcc" value="<?php $this->getPOST('idcc'); ?>">
+						<div class="input-group-btn"><label>&nbsp;a</label></div>
+					</div>
+					<div style="height: 5px;">&nbsp;</div>
+					<div class="input-group">
+						<input class="form-control" type="password" placeholder="Password" id="opsw" name="opsw">
+						<div class="input-group-btn">
+							<button class="btn btn-primary" type="submit">
+								Enviar
+							</button>
+						</div>
+					</div>
+					<p class="no-margin margin-top-5">
+						&#191;Olvido su contrase&#241;a? <a href="forgot.html"> Haga click aqui</a>
+					</p>
+				</div>
+			</div>
+			<p class="font-xs margin-top-5">
+				www.Okieoky.com - Sucursal Cartagena.
+			</p>
+		</form>
+		<?php
+			if(isset($this->msgError)){
+				echo '<div class="msgError">';
+				echo '<span>'.$this->msgError.'</span>';
+				echo '</div>';
+			}
+		?>
+		
+	</div>
+	</div>
+	</body>
+</html>
