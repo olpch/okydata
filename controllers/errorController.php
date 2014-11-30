@@ -1,15 +1,15 @@
 <?php
 class errorController extends Controller{
 
-	public function __construct(){
-		parent::__construct();
+	public function __construct($name, $action){
+		parent::__construct($name, $action);
 	}
 
 	public function index(){
-		$this->toRender('code404');
+		$this->_view->renderContent();
 	}
 
 	public function code404(){
-		$this->toRender('code404');
+		$this->_view->renderContent();
 	}
 }

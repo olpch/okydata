@@ -4,10 +4,10 @@ class invoiceController extends Controller{
 	public function __construct($name, $action){
 		parent::__construct($name, $action);
 		$this->invoices = $this->loadModel('invoice');
+		$this->_view->mnuTab = 'Invoices';
 	}
 
 	public function index(){
-		$this->_view->mnuTab = 'invoices';
 		$this->_view->invoices = $this->invoices->all();
 		$this->_view->renderView();
 	}

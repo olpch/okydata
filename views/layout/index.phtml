@@ -44,31 +44,37 @@
   <div id="divContent">
     <div id="otabs">
       <ul class="titles">
-        <?php $this->limenu('Dashboard')?>
-          <i class="glyphicon glyphicon-dashboard icontab"></i>
-          <center class="titletab">Dashboard</center>
+        <?php $this->limenu('Dashboard'); ?>
+          <a href="<?php $this->getPath('dashboard'); ?>">
+            <i class="glyphicon glyphicon-dashboard icontab"></i>
+            <center class="titletab">Dashboard</center>
+            </a>
         </li>
-        <?php $this->limenu('invoices')?>
-          <i class="glyphicon glyphicon-list-alt icontab"></i>
-          <center class="titletab">Facturación</center>
+        <?php $this->limenu('Invoices'); ?>
+          <a href="<?php $this->getPath('invoices'); ?>">
+            <i class="glyphicon glyphicon-list-alt icontab"></i>
+            <center class="titletab">Facturación</center>
+          </a>
         </li>
-        <?php $this->limenu('stock')?>
-          <i class="glyphicon glyphicon-barcode icontab"></i>
-          <center class="titletab">Inventario</center>
+        <?php $this->limenu('Stock'); ?>
+          <a href="<?php $this->getPath('stocks'); ?>">
+            <i class="glyphicon glyphicon-barcode icontab"></i>
+            <center class="titletab">Inventario</center>
+          </a>
         </li>
-        <?php $this->limenu('peoples')?>
+        <?php $this->limenu('Peoples'); ?>
           <i class="glyphicon glyphicon-home icontab"></i>
           <center class="titletab">Terceros</center>
         </li>
-        <?php $this->limenu('reports')?>
+        <?php $this->limenu('Reports'); ?>
           <i class="glyphicon glyphicon-signal icontab"></i>
           <center class="titletab">Reportes</center>
         </li>
-        <?php $this->limenu('balances')?>
+        <?php $this->limenu('Balances'); ?>
           <i class="glyphicon glyphicon-tasks icontab"></i>
           <center class="titletab">Balances</center>
         </li>
-        <?php $this->limenu('Config')?>
+        <?php $this->limenu('Config'); ?>
           <i class="fa fa-cogs icontab"></i>
           <center class="titletab">Config.</center>
         </li>

@@ -24,7 +24,10 @@
 
 
 	// nucleo del programa
-	$routes->get( '/dashboard', 'core#index');
+	$routes->get( '/dashboard', 'core#dashboard');
+
+	// Stock Controller
+	$routes->get( '/stocks', 'stock#index');
 
 	// páginas de error
 	$routes->get( '/404',  'error#code404');

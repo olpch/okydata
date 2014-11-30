@@ -32,12 +32,12 @@ class View {
 		$pathfile = ROOT.'views'.DS.$this->_controller.DS;
 		$pathfile .= (!$vista) ? $this->_name : $vista;
 		/*echo '<br/>['.$pathfile.']';*/
-			if (is_readable($pathfile.'.phtml')) {
-				include_once $pathfile.'.phtml';
-			} 
-			else {
-				throw new Exception('Error de vista[' . $pathfile.'.phtml]');
-			}
+		if (is_readable($pathfile.'.phtml')) {
+			include_once $pathfile.'.phtml';
+		} 
+		else {
+			throw new Exception('Error de vista[' . $pathfile.'.phtml]');
+		}
    }
 
 	function getJS($js){
@@ -67,7 +67,13 @@ class View {
 
 	public function limenu($value){
 		echo '<li ';
-		echo $this->mnuTab == $value ? 'class="active" >' : '>';
+		if (isset($this->mnuTab))
+			echo $this->mnuTab == $value ? 'class="active"' : '';
+		echo '>';
 	}
+
+	function getPath($path = ''){
+   	echo BASE_URL .$path;
+  }
 
 }

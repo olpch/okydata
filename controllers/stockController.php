@@ -1,16 +1,14 @@
 <?php
-class coreController extends Controller{
+class stockController extends Controller{
 
 	public function __construct($name, $action){
 		parent::__construct($name, $action);
+		$this->_view->mnuTab = 'Stock';
 	}
 
 	public function index(){
-	}
-
-	public function dashboard(){
 		Session::access(1);
-		$this->_view->mnuTab = 'Dashboard';
 		$this->_view->renderView();
 	}
+
 }
