@@ -1,6 +1,6 @@
 <div class="row">
 	
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<div class="opanel">
 			<div class="opanel-heading">
 				<div class="title">
@@ -11,10 +11,29 @@
 				<div class="glyphicon glyphicon-chevron-down closepanel"></div>
 			</div>
 			<div class="opanel-body">
-				primer contenido
+				<table class="table_slim">
+					<thead>
+						<tr>
+							<th style="width: 20px;">Id</th>
+							<th style="width: *%;">Nommbre</th>
+							<!-- <th style="width: 80px;">Sub.</th> -->
+						</tr>
+					</thead>
+					<tbody>
+					<?php
+						foreach ($this->allCategories as $cat){
+							echo '<tr>';
+							echo '<td>'.$cat['id'].'</td>';
+							echo '<td>'.$cat['name'].'</td>';
+							/*echo '<td>$ 99.999.999</td>';*/
+							echo '</tr>	';
+						}	
+					?>
+					</tbody>
+				</table>
 			</div>
 			<div class="opanel-body">
-      			<span>asdasdassd</span>
+      			<span style="float: right"><?php echo count($this->allCategories) . ' Categorias'; ?></span>
       		</div>
 		</div>
 	</div>
@@ -24,7 +43,7 @@
 			<div class="opanel-heading">
 				<div class="title">
 					<i class="glyphicon glyphicon-home"> </i> 
-					<label>Panel heading without title</label>
+					<label>Mas vendidos mes anterior</label>
 				</div>
 				<!-- div class="titleclose"></div -->
 				<div class="glyphicon glyphicon-chevron-down closepanel"></div>
@@ -43,7 +62,26 @@
 			<div class="opanel-heading">
 				<div class="title">
 					<i class="glyphicon glyphicon-home"> </i> 
-					<label>Panel heading without title</label>
+					<label>Subcategorias</label>
+				</div>
+				<!-- div class="titleclose"></div -->
+				<div class="glyphicon glyphicon-chevron-down closepanel"></div>
+			</div>
+			<div class="opanel-body">
+				primer contenido
+			</div>
+			<div class="opanel-body">
+      			<div style="float: right">asdasdassd</div>
+      		</div>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<div class="opanel">
+			<div class="opanel-heading">
+				<div class="title">
+					<i class="glyphicon glyphicon-home"> </i> 
+					<label>Articulos sin Existencias</label>
 				</div>
 				<!-- div class="titleclose"></div -->
 				<div class="glyphicon glyphicon-chevron-down closepanel"></div>

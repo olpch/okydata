@@ -132,8 +132,8 @@ body{
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
 	border-bottom: 2px solid #f1f1f1;
-	padding: 5px 8px;
-	margin: 5px 0;
+	padding: 0;
+	margin: 5px;
 	overflow: auto;
 
 	background: rgba(255,255,255,1);
@@ -145,6 +145,21 @@ body{
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 68%, rgba(255,255,255,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
 	
+}
+
+.opanel .opanel-body .table_slim{
+	width: 100%;
+	table-layout: fixed;
+	padding: 0px;
+	margin: 0px;	
+	border-spacing: 0px;
+}
+
+.opanel .opanel-body .table_slim tr{
+	border-bottom: 1px solid #c4c4c4;
+}
+.opanel .opanel-body .table_slim th{
+	color: #ff3300;
 }
 
 .opanel-break{
@@ -372,6 +387,7 @@ ul.titles li.active a:visited {
 
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
     margin: 5px;
 }
  
@@ -380,8 +396,12 @@ ul.titles li.active a:visited {
     border-radius: 4px;
 }
 
-::-webkit-scrollbar-track-piece{
-	background: url('../img/core/ui/scrollbar_track.png')
+::-webkit-scrollbar-track-piece:vertical{
+	background: url('../img/core/ui/scrollbarv_track.png');
+}
+
+::-webkit-scrollbar-track-piece:horizontal{
+	background: url('../img/core/ui/scrollbarh_track.png');
 }
  
 ::-webkit-scrollbar-thumb {
