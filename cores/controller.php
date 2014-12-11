@@ -21,7 +21,7 @@ abstract class Controller {
         $modelo = new $modelo;
         return $modelo;
     } else {
-        throw new Exception('Error de modelo');
+        throw new Exception('No se encuentra el modelo '. $modelo);
     }
   }
 
@@ -82,6 +82,14 @@ abstract class Controller {
 
   function redirectTo($path = ''){
     header('location:' . BASE_URL .$path);
+  }
+
+  function showpre($val, $die = false){
+    echo '<br/><pre>';
+    print_r($val);
+    echo '<pre>';
+    if($die)
+      die();
   }
 
  } //end Controller

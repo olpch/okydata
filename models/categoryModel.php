@@ -3,7 +3,7 @@
 class CategoryModel extends Model{
 
 	public function __construct(){
-			parent::__construct();
+			parent::__construct('categories');
 	}
 	
 	public function all($numidex = false){

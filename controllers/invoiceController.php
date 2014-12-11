@@ -3,17 +3,21 @@ class invoiceController extends Controller{
 
 	public function __construct($name, $action){
 		parent::__construct($name, $action);
-		$this->invoices = $this->loadModel('invoice');
+		$this->invoices = $this->loadModel('invoice');		
 		$this->_view->mnuTab = 'Invoices';
 	}
 
 	public function index(){
 		$this->_view->invoices = $this->invoices->all();
+		$this->_view->nombre = 'omar lee es la verga!!';
 		$this->_view->renderView();
 	}
 
 	public function create(){
-		echo '{"messaje": "new item!!"}';
+		$this->_view->newid  =  $this->invoices->newId();
+		$this->_view->details = $this->invoices->details($this->_view->newid-2);
+		/*$this->showpre($this->_view->details, true);*/
+		$this->_view->renderContent();
 	}
 
 	public function destroy(){

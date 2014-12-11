@@ -18,7 +18,7 @@ class View {
 				include_once $pathfile.'.phtml';
 			} 
 			else {
-				throw new Exception('Error de vista[' . $pathfile.'.phtml]');
+				throw new Exception('Error<br/>no se encuentra el layout: [' . $pathfile.'.phtml]');
 			}
 	        // http_response_code($status_code);
 	        // header('Content-type: application/json');
@@ -36,7 +36,7 @@ class View {
 			include_once $pathfile.'.phtml';
 		} 
 		else {
-			throw new Exception('Error de vista[' . $pathfile.'.phtml]');
+			throw new Exception('<br/>no se encuentra la vista: [' . $pathfile.'.phtml]');
 		}
    }
 

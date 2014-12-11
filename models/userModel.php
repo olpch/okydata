@@ -2,7 +2,7 @@
 class UserModel extends Model{
 
 	public function __construct(){
-			parent::__construct();
+			parent::__construct('users');
 	}
 	
 	public function all($numidex = false){
@@ -52,9 +52,9 @@ class UserModel extends Model{
 		return $res;
 	}
 
-	public function signup($key, $opsw){
+	public function signin($key, $opsw){
 		$hash = Hash::get('sha1', $opsw, HASH_KEY);
-		$c  = 'SELECT u.id, u.uid, u.olvl, u.first_name, u.last_name FROM users u ';
+		$c  = 'SELECT u.id, u.uid, u.level, u.first_name, u.last_name FROM users u ';
 		$c .= "WHERE ( u.uid LIKE :key "; 
 		$c .= "OR UPPER(u.email) LIKE UPPER(:key) ) ";
 		$c .= "AND opsw like :opsw";

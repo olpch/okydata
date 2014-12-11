@@ -11,10 +11,10 @@ class loginController extends Controller{
 			header('location: '.BASE_URL.'dashboard');	
 		}
 		if(isset($_POST['idcc'])){
-			$checklogin = $this->current_user->signup($_POST['idcc'], $_POST['opsw']);
+			$checklogin = $this->current_user->signin($_POST['idcc'], $_POST['opsw']);
 			if($checklogin){
 				Session::register(true);
-				Session::set('level', $checklogin['olvl']);
+				Session::set('level', $checklogin['level']);
 				Session::set('User', $checklogin['first_name'].' '. $checklogin['last_name']);
 				Session::set('time', time());
 				$this->redirectTo('dashboard');

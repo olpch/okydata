@@ -1,6 +1,6 @@
 <?php
 
-class UserModel extends Model{
+class ItemModel extends Model{
 
 	public function __construct(){
 			parent::__construct();
@@ -15,5 +15,9 @@ class UserModel extends Model{
 		}else{
 			return $res->fetchAll(PDO::FETCH_ASSOC);
 		}
+	}
+
+	public function details(){
+		
 	}
 }

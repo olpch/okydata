@@ -46,7 +46,7 @@
 	$routes->delete('/api/invoices/:id', 'invoice#destroy'); //,true);
 	$routes->get( '/api/invoices/:id/details', 'invoice#details');
 
-
+	$routes->get( '/invoices/create', 'invoice#create');	
 
 	// Page not found (HTML) - Error 404
 	//$routes->get('/.*', 'error#404');

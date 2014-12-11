@@ -29,7 +29,8 @@ try {
     Bootstrap::run(new Request());
 
 } catch (Exception $e) {
-    echo '<br/> Codigo del error [' . $e->getCode() . ']';
-    echo '<br/> Mensaje del error [' . $e->getMessage() . ']';
+    echo '<h2 style="color: red;">Error Interno 8080</h2>';
+    echo '<b>Mensage:</b>';
+    echo $e->getMessage();
     die();
 }
