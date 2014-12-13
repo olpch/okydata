@@ -58,7 +58,7 @@ class loginController extends Controller{
 				}
 			}	
 		}else{
-			$this->toRender('signup');
+			$this->_view->renderContent();
 		}
 	}
 
